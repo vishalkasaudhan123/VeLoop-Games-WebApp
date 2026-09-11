@@ -1,0 +1,471 @@
+.game {
+  width: 100%;
+  min-height: 620px;
+
+  padding: 22px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(75, 94, 220, 0.12),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 90% 80%,
+      rgba(117, 82, 220, 0.1),
+      transparent 28%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(19, 26, 61, 0.98),
+      rgba(9, 14, 38, 0.98)
+    );
+
+  color: #ffffff;
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+/* TOP SCORE */
+
+.top {
+  display: flex;
+  justify-content: center;
+
+  gap: 12px;
+
+  margin-bottom: 20px;
+}
+
+.top > div {
+  min-width: 125px;
+
+  padding: 11px 18px;
+
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.045);
+
+  text-align: center;
+}
+
+.top span {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #7f8ab3;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+.top strong {
+  display: block;
+
+  color: #ffffff;
+
+  font-size: 19px;
+  font-weight: 800;
+}
+
+/* START SCREEN */
+
+.start {
+  min-height: 470px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 45px 25px;
+
+  text-align: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 22px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(30, 38, 82, 0.8),
+      rgba(13, 19, 47, 0.9)
+    );
+}
+
+.start::before {
+  content: "🔢";
+
+  width: 78px;
+  height: 78px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 22px;
+
+  border-radius: 23px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(82, 103, 255, 0.2),
+      rgba(117, 91, 224, 0.15)
+    );
+
+  font-size: 34px;
+}
+
+.start h2 {
+  margin: 0 0 10px;
+
+  color: #ffffff;
+
+  font-size: 29px;
+  font-weight: 800;
+}
+
+.start p {
+  max-width: 500px;
+
+  margin: 0 0 25px;
+
+  color: #8993bb;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+.start button {
+  border: 0;
+
+  padding: 13px 21px;
+
+  border-radius: 12px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #566aff,
+      #735de1
+    );
+
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  box-shadow: 0 10px 28px rgba(83, 103, 255, 0.22);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.start button:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 14px 32px rgba(83, 103, 255, 0.32);
+}
+
+.start small {
+  margin-top: 13px;
+
+  color: #687398;
+
+  font-size: 11px;
+}
+
+/* BOARD */
+
+.board {
+  width: min(430px, 100%);
+
+  aspect-ratio: 1;
+
+  margin: 24px auto 18px;
+
+  padding: 10px;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 9px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+
+  background:
+    rgba(5, 8, 25, 0.9);
+
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.28),
+    inset 0 0 25px rgba(0, 0, 0, 0.25);
+}
+
+/* TILE */
+
+.tile {
+  min-width: 0;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 11px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(31, 38, 73, 0.95),
+      rgba(20, 26, 57, 0.95)
+    );
+
+  border: 1px solid rgba(255, 255, 255, 0.05);
+
+  color: #737da7;
+
+  font-size: clamp(1.15rem, 5vw, 2rem);
+
+  font-weight: 900;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.025);
+
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+/* TILE COLORS */
+
+.v2 {
+  background: #2b376b;
+  color: #e5e9ff;
+}
+
+.v4 {
+  background: #35447d;
+  color: #ffffff;
+}
+
+.v8 {
+  background: #5d4b9d;
+  color: #ffffff;
+
+  box-shadow: 0 0 15px rgba(111, 86, 218, 0.18);
+}
+
+.v16 {
+  background: #684895;
+  color: #ffffff;
+
+  box-shadow: 0 0 17px rgba(132, 81, 211, 0.2);
+}
+
+.v32 {
+  background: #7c4782;
+  color: #ffffff;
+
+  box-shadow: 0 0 18px rgba(180, 72, 185, 0.2);
+}
+
+.v64 {
+  background: #8a456c;
+  color: #ffffff;
+
+  box-shadow: 0 0 20px rgba(216, 73, 132, 0.22);
+}
+
+.v128 {
+  background: #8a5b42;
+  color: #ffffff;
+
+  box-shadow: 0 0 20px rgba(220, 135, 69, 0.22);
+}
+
+.v256 {
+  background: #886737;
+  color: #ffffff;
+
+  box-shadow: 0 0 20px rgba(223, 160, 65, 0.23);
+}
+
+.v512 {
+  background: #8c702f;
+  color: #ffffff;
+
+  box-shadow: 0 0 22px rgba(230, 184, 63, 0.25);
+}
+
+.v1024 {
+  background: #997a2e;
+  color: #ffffff;
+
+  box-shadow: 0 0 24px rgba(240, 195, 62, 0.28);
+}
+
+.v2048 {
+  background: linear-gradient(
+    135deg,
+    #a88729,
+    #c39a31
+  );
+
+  color: #ffffff;
+
+  box-shadow:
+    0 0 28px rgba(255, 204, 64, 0.3);
+}
+
+/* CONTROLS */
+
+.controls {
+  text-align: center;
+
+  margin-top: 5px;
+}
+
+.controls button {
+  width: 43px;
+  height: 43px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 11px;
+
+  background:
+    rgba(255, 255, 255, 0.06);
+
+  color: #c7cef0;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.15s ease,
+    background 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.controls button:hover {
+  transform: translateY(-2px);
+
+  border-color: rgba(101, 118, 255, 0.45);
+
+  background: rgba(83, 103, 255, 0.16);
+
+  color: #ffffff;
+}
+
+.controls button:active {
+  transform: scale(0.94);
+}
+
+.controls > button {
+  display: flex;
+
+  margin: 0 auto 4px;
+}
+
+.controls > div {
+  display: flex;
+  justify-content: center;
+
+  gap: 5px;
+}
+
+/* HELP */
+
+.help {
+  margin: 17px auto 0;
+
+  color: #6f7a9f;
+
+  font-size: 11px;
+
+  text-align: center;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .game {
+    min-height: auto;
+
+    padding: 15px;
+
+    border-radius: 19px;
+  }
+
+  .top {
+    gap: 8px;
+  }
+
+  .top > div {
+    min-width: 110px;
+
+    padding: 9px 12px;
+  }
+
+  .board {
+    gap: 6px;
+
+    padding: 7px;
+
+    border-radius: 17px;
+  }
+
+  .tile {
+    border-radius: 8px;
+  }
+
+  .controls button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .start {
+    min-height: 400px;
+
+    padding: 30px 18px;
+  }
+}
+
+@media (max-width: 420px) {
+  .top {
+    justify-content: stretch;
+  }
+
+  .top > div {
+    min-width: 0;
+
+    flex: 1;
+  }
+
+  .top span {
+    font-size: 9px;
+  }
+
+  .top strong {
+    font-size: 16px;
+  }
+}

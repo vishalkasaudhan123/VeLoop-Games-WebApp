@@ -1,0 +1,164 @@
+.header {
+  position: sticky;
+  top: 0;
+
+  height: 72px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 28px;
+
+  background: rgba(2, 10, 29, 0.88);
+
+  border-bottom: 1px solid rgba(72, 120, 255, 0.16);
+
+  backdrop-filter: blur(18px);
+
+  z-index: 15;
+
+  box-sizing: border-box;
+}
+
+.search {
+  width: min(445px, 45%);
+
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  padding: 0 16px;
+
+  border-radius: 24px;
+
+  background: #0b1b43;
+
+  border: 1px solid rgba(76, 119, 240, 0.25);
+
+  color: #7590bf;
+}
+
+.search input {
+  width: 100%;
+
+  border: 0;
+  outline: 0;
+
+  background: transparent;
+
+  color: white;
+
+  font-size: 12px;
+}
+
+.search input::placeholder {
+  color: #7185ad;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.balance,
+.iconButton,
+.profile {
+  position: relative;
+
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.balance {
+  gap: 7px;
+
+  padding: 0 14px;
+
+  border-radius: 22px;
+
+  border: 1px solid rgba(55, 114, 255, 0.45);
+
+  background: rgba(7, 24, 58, 0.8);
+
+  color: white;
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.balance svg:first-child {
+  color: #ffd13d;
+}
+
+.iconButton,
+.profile {
+  width: 40px;
+
+  border: 1px solid rgba(70, 112, 220, 0.35);
+
+  border-radius: 50%;
+
+  background: #0a1940;
+
+  color: #aec1e6;
+
+  cursor: pointer;
+}
+
+.profile {
+  background:
+    linear-gradient(
+      135deg,
+      #5838ff,
+      #168cff
+    );
+
+  color: white;
+}
+
+.notification {
+  position: absolute;
+
+  width: 7px;
+  height: 7px;
+
+  top: 7px;
+  right: 7px;
+
+  border-radius: 50%;
+
+  background: #ff5074;
+
+  border: 2px solid #091735;
+}
+
+@media (max-width: 650px) {
+  .header {
+    padding: 0 14px;
+  }
+
+  .search {
+    width: 45px;
+    padding: 0;
+    justify-content: center;
+  }
+
+  .search input {
+    display: none;
+  }
+
+  .balance {
+    padding: 0 9px;
+  }
+
+  .profile {
+    display: none;
+  }
+}

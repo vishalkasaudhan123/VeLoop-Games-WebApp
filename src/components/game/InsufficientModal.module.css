@@ -1,0 +1,1 @@
+.overlay{position:fixed;inset:0;z-index:60;display:grid;place-items:center;background:rgba(18,22,30,.42);padding:20px}.modal{background:#fff;width:min(390px,100%);padding:25px;border-radius:20px;text-align:center}.modal button{border:0;border-radius:12px;padding:10px 20px;background:#151922;color:#fff;font-weight:800}

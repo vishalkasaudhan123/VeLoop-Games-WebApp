@@ -1,0 +1,85 @@
+.button {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  width: 100%;
+  min-height: 35px;
+
+  padding: 8px 10px;
+
+  overflow: hidden;
+
+  border: 0;
+  border-radius: 8px;
+
+  background: linear-gradient(
+    135deg,
+    #397cff,
+    #654fff
+  );
+
+  color: white;
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 7px 18px rgba(62, 102, 255, 0.25);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.button:hover:not(:disabled) {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 24px rgba(62, 102, 255, 0.4);
+}
+
+.button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.button:disabled {
+  background: #526079;
+
+  color: #b6bfd0;
+
+  cursor: not-allowed;
+
+  box-shadow: none;
+}
+
+.shimmer {
+  position: absolute;
+
+  top: 0;
+  left: -100%;
+
+  width: 60%;
+  height: 100%;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.18),
+    transparent
+  );
+
+  transform: skewX(-20deg);
+
+  transition: left 0.6s ease;
+}
+
+.button:hover:not(:disabled) .shimmer {
+  left: 140%;
+}

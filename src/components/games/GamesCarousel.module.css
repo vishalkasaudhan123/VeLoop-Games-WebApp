@@ -1,0 +1,74 @@
+.viewport {
+  width: 100%;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  padding: 14px 2px 20px;
+
+  scrollbar-width: none;
+
+  scroll-behavior: smooth;
+}
+
+.viewport::-webkit-scrollbar {
+  display: none;
+}
+
+.track {
+  display: flex;
+
+  gap: 14px;
+
+  width: max-content;
+}
+
+.track > div {
+  flex: 0 0 auto;
+}
+
+/* ================= DOTS ================= */
+
+.dots {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 7px;
+
+  margin-top: 2px;
+}
+
+.dots button {
+  width: 7px;
+  height: 7px;
+
+  padding: 0;
+
+  border: 0;
+
+  border-radius: 50%;
+
+  background: #b7c1d5;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.dots button:hover {
+  background: #7695e8;
+}
+
+.dots button.activeDot {
+  width: 23px;
+
+  border-radius: 10px;
+
+  background: linear-gradient(
+    90deg,
+    #477cff,
+    #7355ff
+  );
+}

@@ -1,0 +1,30 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  background:
+    radial-gradient(
+      circle at 70% 10%,
+      rgba(47, 82, 190, 0.14),
+      transparent 28%
+    ),
+    linear-gradient(135deg, #020a1d 0%, #04112d 45%, #020817 100%);
+  color: #ffffff;
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+  margin-left: 250px;
+}
+
+.main {
+  width: 100%;
+  min-height: calc(100vh - 72px);
+  box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+  .content {
+    margin-left: 0;
+  }
+}

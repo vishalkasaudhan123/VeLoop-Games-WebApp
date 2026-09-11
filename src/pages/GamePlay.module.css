@@ -1,0 +1,251 @@
+.page {
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      circle at 15% 10%,
+      rgba(77, 70, 180, 0.18),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 25%,
+      rgba(30, 110, 210, 0.14),
+      transparent 28%
+    ),
+    linear-gradient(135deg, #070b22 0%, #0b1030 48%, #080b21 100%);
+  color: #ffffff;
+}
+
+/* Main page */
+
+.main {
+  width: 100%;
+  padding: 28px 20px 70px;
+}
+
+.gameContainer {
+  width: min(1100px, 100%);
+  margin: 0 auto;
+}
+
+/* Game area */
+
+.gameArea {
+  margin-top: 18px;
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(23, 29, 70, 0.94),
+      rgba(10, 15, 42, 0.96)
+    );
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* Soft glow behind game */
+
+.gameArea::before {
+  content: "";
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  top: -130px;
+  right: -100px;
+
+  background: rgba(80, 90, 255, 0.14);
+  filter: blur(80px);
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.gameArea::after {
+  content: "";
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  bottom: -120px;
+  left: -100px;
+
+  background: rgba(0, 180, 255, 0.08);
+  filter: blur(75px);
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+/* Unavailable game */
+
+.empty {
+  min-height: calc(100vh - 80px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px 20px;
+}
+
+.emptyCard {
+  width: min(500px, 100%);
+  padding: 45px 35px;
+
+  text-align: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 26px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(23, 29, 70, 0.96),
+      rgba(10, 15, 42, 0.98)
+    );
+
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+}
+
+.emptyIcon {
+  width: 72px;
+  height: 72px;
+
+  margin: 0 auto 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 22px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(90, 95, 255, 0.25),
+    rgba(30, 130, 230, 0.16)
+  );
+
+  font-size: 34px;
+}
+
+.emptyBadge {
+  display: inline-block;
+
+  padding: 6px 12px;
+
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.06);
+
+  color: #9ea8d8;
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+
+.emptyCard h1 {
+  margin: 16px 0 10px;
+
+  color: #ffffff;
+
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.emptyCard p {
+  margin: 0 0 26px;
+
+  color: #929bc2;
+
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.backButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 12px 20px;
+
+  border-radius: 12px;
+
+  background: linear-gradient(
+    135deg,
+    #5367ff,
+    #7564e8
+  );
+
+  color: #ffffff;
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  box-shadow: 0 10px 30px rgba(82, 96, 255, 0.25);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.backButton:hover {
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 35px rgba(82, 96, 255, 0.35);
+}
+
+/* Tablet */
+
+@media (max-width: 768px) {
+  .main {
+    padding: 22px 14px 50px;
+  }
+
+  .gameArea {
+    padding: 18px;
+    border-radius: 20px;
+  }
+
+  .emptyCard {
+    padding: 35px 24px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 480px) {
+  .main {
+    padding: 16px 10px 40px;
+  }
+
+  .gameArea {
+    margin-top: 14px;
+    padding: 14px;
+    border-radius: 18px;
+  }
+
+  .empty {
+    padding: 25px 14px;
+  }
+
+  .emptyCard {
+    padding: 30px 20px;
+    border-radius: 20px;
+  }
+
+  .emptyCard h1 {
+    font-size: 25px;
+  }
+
+  .emptyCard p {
+    font-size: 14px;
+  }
+}
