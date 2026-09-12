@@ -1,155 +1,265 @@
+
 .card {
-  width: 165px;
-  min-width: 165px;
-  height: 285px;
+position: relative;
 
-  display: flex;
-  flex-direction: column;
+width: 225px;
+min-width: 225px;
+height: 265px;
 
-  overflow: hidden;
+overflow: hidden;
 
-  background:
-    linear-gradient(
-      180deg,
-      #122449 0%,
-      #0b1834 100%
-    );
+border: 1px solid rgba(70, 125, 255, 0.55);
+border-radius: 15px;
 
-  border: 1px solid rgba(84, 122, 210, 0.35);
-  border-radius: 14px;
+background: #07152f;
 
-  box-shadow:
-    0 12px 28px rgba(4, 15, 40, 0.16),
-    inset 0 1px rgba(255, 255, 255, 0.06);
+box-shadow:
+0 12px 28px rgba(2, 12, 32, 0.38),
+inset 0 1px rgba(255, 255, 255, 0.08);
 
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
-    border-color 0.25s ease;
+transition:
+transform 0.25s ease,
+border-color 0.25s ease,
+box-shadow 0.25s ease;
 }
 
 .card:hover {
-  transform: translateY(-7px);
+transform: translateY(-5px);
 
-  border-color: rgba(90, 135, 255, 0.8);
+border-color: rgba(85, 145, 255, 0.95);
 
-  box-shadow:
-    0 18px 35px rgba(20, 70, 180, 0.28),
-    0 0 20px rgba(75, 110, 255, 0.12);
+box-shadow:
+0 18px 35px rgba(30, 90, 220, 0.32),
+0 0 22px rgba(75, 110, 255, 0.18);
 }
 
-/* ================= IMAGE ================= */
+/* =========================
+IMAGE
+========================= */
 
 .imageWrap {
-  position: relative;
+position: relative;
 
-  width: 100%;
-  height: 118px;
+width: 100%;
+height: 100%;
 
-  flex-shrink: 0;
+overflow: hidden;
 
-  overflow: hidden;
-
-  background: #07142c;
-}
-
-.imageWrap::after {
-  content: "";
-
-  position: absolute;
-  inset: 0;
-
-  background:
-    linear-gradient(
-      to bottom,
-      transparent 55%,
-      rgba(4, 13, 30, 0.7)
-    );
-
-  pointer-events: none;
+background: #07152f;
 }
 
 .imageWrap img {
-  display: block;
+display: block;
 
-  width: 100%;
-  height: 100%;
+width: 100%;
+height: 100%;
 
-  object-fit: cover;
+object-fit: cover;
 
-  transition: transform 0.4s ease;
+/*
+Keep the upper part of the artwork visible.
+The lower part can be cropped slightly.
+*/
+object-position: center top;
+
+transition: transform 0.45s ease;
 }
 
 .card:hover .imageWrap img {
-  transform: scale(1.06);
+transform: scale(1.04);
 }
 
-/* ================= BADGE ================= */
+/* =========================
+BOTTOM DARK GRADIENT
+========================= */
+
+.overlay {
+position: absolute;
+
+inset: 0;
+
+z-index: 1;
+
+background:
+linear-gradient(
+to bottom,
+rgba(3, 12, 30, 0) 0%,
+rgba(3, 12, 30, 0.02) 35%,
+rgba(3, 12, 30, 0.18) 52%,
+rgba(3, 10, 26, 0.72) 72%,
+rgba(3, 10, 26, 0.98) 100%
+);
+
+pointer-events: none;
+}
+
+/* =========================
+BANNER ONLY BADGE
+========================= */
 
 .badge {
-  position: absolute;
+position: absolute;
 
-  left: 8px;
-  bottom: 8px;
+top: 9px;
+right: 9px;
 
-  z-index: 2;
+z-index: 3;
 
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
+display: inline-flex;
+align-items: center;
+gap: 4px;
 
-  padding: 5px 8px;
+padding: 5px 8px;
 
-  border-radius: 20px;
+border: 1px solid rgba(255, 255, 255, 0.15);
+border-radius: 20px;
 
-  background: rgba(4, 13, 30, 0.88);
+background: rgba(4, 13, 30, 0.78);
 
-  border: 1px solid rgba(255, 255, 255, 0.12);
+color: #ffffff;
 
-  color: #dce7ff;
+font-size: 8px;
+font-weight: 700;
 
-  font-size: 9px;
-  font-weight: 700;
+white-space: nowrap;
 
-  backdrop-filter: blur(8px);
+backdrop-filter: blur(8px);
 }
 
-/* ================= BODY ================= */
+/* =========================
+CONTENT
+========================= */
 
-.body {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
+.content {
+position: absolute;
 
-  padding: 11px;
+left: 0;
+right: 0;
+bottom: 0;
+
+z-index: 2;
+
+padding:
+0
+14px
+14px;
 }
 
-.body h2 {
-  margin: 0 0 6px;
+/* =========================
+CATEGORY
+========================= */
 
-  color: white;
+.category {
+display: block;
 
-  font-size: 14px;
-  font-weight: 800;
-  line-height: 1.2;
+margin-bottom: 4px;
+
+color: #9abfff;
+
+font-size: 9px;
+font-weight: 600;
+
+line-height: 1.2;
 }
 
-.body p {
-  flex: 1;
+/* =========================
+GAME NAME
+========================= */
 
-  margin: 0;
+.content h2 {
+display: block;
 
-  color: #9eafd0;
+width: 100%;
 
-  font-size: 10px;
-  line-height: 1.45;
+margin: 0 0 10px;
+
+color: #ffffff;
+
+font-size: 16px;
+font-weight: 800;
+
+line-height: 1.2;
+
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+
+text-shadow:
+0 2px 8px rgba(0, 0, 0, 0.7);
 }
 
-/* ================= BUTTON ================= */
+/* =========================
+BUTTON
+========================= */
 
-.body button {
-  width: 100%;
-  min-height: 34px;
+.content button {
+width: auto;
 
-  margin-top: 10px;
+min-width: 105px;
+min-height: 34px;
+
+margin: 0;
+}
+
+/* =========================
+LARGE DESKTOP
+========================= */
+
+@media (min-width: 1200px) {
+.card {
+width: 225px;
+min-width: 225px;
+height: 265px;
+}
+}
+
+/* =========================
+TABLET
+========================= */
+
+@media (max-width: 1100px) {
+.card {
+width: 215px;
+min-width: 215px;
+height: 250px;
+}
+}
+
+/* =========================
+SMALL TABLET
+========================= */
+
+@media (max-width: 800px) {
+.card {
+width: 205px;
+min-width: 205px;
+height: 240px;
+}
+}
+
+/* =========================
+MOBILE
+========================= */
+
+@media (max-width: 600px) {
+.card {
+width: 195px;
+min-width: 195px;
+height: 235px;
+}
+
+.content {
+padding:
+0
+12px
+12px;
+}
+
+.content h2 {
+font-size: 14px;
+}
+
+.category {
+font-size: 8px;
+}
 }

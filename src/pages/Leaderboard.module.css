@@ -1,0 +1,286 @@
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 30px 24px 60px;
+}
+
+/* ================= HEADER ================= */
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.icon {
+  width: 54px;
+  height: 54px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+
+  background: #f5f3ff;
+  color: #6366f1;
+}
+
+.header h1 {
+  margin: 0;
+
+  font-size: 28px;
+  font-weight: 800;
+
+  color: #1f2937;
+}
+
+.header p {
+  margin: 4px 0 0;
+
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* ================= TOP PLAYERS ================= */
+
+.topPlayers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+
+  margin-bottom: 28px;
+}
+
+.topCard {
+  position: relative;
+
+  padding: 24px 18px;
+
+  text-align: center;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+}
+
+.first {
+  border: 2px solid #f59e0b;
+}
+
+.second {
+  border: 2px solid #9ca3af;
+}
+
+.third {
+  border: 2px solid #cd7f32;
+}
+
+.rankIcon {
+  margin-bottom: 8px;
+}
+
+.first .rankIcon {
+  color: #f59e0b;
+}
+
+.second .rankIcon {
+  color: #6b7280;
+}
+
+.third .rankIcon {
+  color: #cd7f32;
+}
+
+.avatar {
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0 auto 10px;
+
+  border-radius: 50%;
+
+  background: #eef2ff;
+  color: #6366f1;
+
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.topCard h2 {
+  margin: 0 0 8px;
+
+  font-size: 17px;
+  color: #1f2937;
+}
+
+.coins {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
+
+  font-size: 13px;
+  color: #6366f1;
+  font-weight: 600;
+}
+
+.rank {
+  display: inline-block;
+
+  margin-top: 12px;
+
+  padding: 4px 10px;
+
+  border-radius: 20px;
+
+  background: #f3f4f6;
+
+  font-size: 11px;
+  font-weight: 700;
+  color: #4b5563;
+}
+
+/* ================= TABLE ================= */
+
+.tableCard {
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+}
+
+.tableHeader,
+.row {
+  display: grid;
+
+  grid-template-columns: 100px 1fr 180px 160px;
+
+  align-items: center;
+
+  padding: 15px 20px;
+}
+
+.tableHeader {
+  background: #f8fafc;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  color: #6b7280;
+
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.row {
+  min-height: 64px;
+
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.row:last-child {
+  border-bottom: none;
+}
+
+.rankNumber {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  color: #4b5563;
+}
+
+.player {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  color: #1f2937;
+}
+
+.smallAvatar {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #eef2ff;
+  color: #6366f1;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.games,
+.gameCoins {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.games {
+  color: #6b7280;
+}
+
+.gameCoins {
+  color: #6366f1;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 700px) {
+  .page {
+    padding: 22px 14px 40px;
+  }
+
+  .topPlayers {
+    grid-template-columns: 1fr;
+  }
+
+  .tableHeader {
+    display: none;
+  }
+
+  .row {
+    grid-template-columns: 45px 1fr auto;
+    gap: 10px;
+  }
+
+  .games {
+    display: none;
+  }
+
+  .gameCoins {
+    justify-content: flex-end;
+  }
+
+  .header h1 {
+    font-size: 23px;
+  }
+}

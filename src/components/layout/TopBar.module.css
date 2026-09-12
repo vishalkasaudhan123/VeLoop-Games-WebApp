@@ -162,3 +162,501 @@
     display: none;
   }
 }
+
+
+/* ================= NOTIFICATION WRAPPER ================= */
+
+.notificationWrapper {
+  position: relative;
+}
+
+/* ================= NOTIFICATION BADGE ================= */
+
+.notification {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+
+  min-width: 16px;
+  height: 16px;
+
+  padding: 0 4px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #ef4444;
+  color: #ffffff;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  border: 2px solid #ffffff;
+}
+
+/* ================= NOTIFICATION PANEL ================= */
+
+.notificationPanel {
+  position: absolute;
+
+  top: calc(100% + 12px);
+  right: 0;
+
+  width: 360px;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.12);
+
+  overflow: hidden;
+
+  z-index: 1000;
+}
+
+/* ================= HEADER ================= */
+
+.notificationHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 16px;
+
+  border-bottom: 1px solid #eeeeee;
+}
+
+.notificationHeader h3 {
+  margin: 0;
+
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.notificationHeader span {
+  display: block;
+
+  margin-top: 3px;
+
+  font-size: 12px;
+  color: #777777;
+}
+
+.markAllButton {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  border: none;
+  background: transparent;
+
+  color: #6366f1;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+/* ================= LIST ================= */
+
+.notificationList {
+  max-height: 360px;
+  overflow-y: auto;
+}
+
+/* ================= ITEM ================= */
+
+.notificationItem {
+  position: relative;
+
+  width: 100%;
+
+  display: flex;
+  align-items: flex-start;
+
+  gap: 12px;
+
+  padding: 14px 16px;
+
+  border: none;
+  border-bottom: 1px solid #f0f0f0;
+
+  background: #ffffff;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition: background 0.2s ease;
+}
+
+.notificationItem:hover {
+  background: #f8fafc;
+}
+
+.notificationItem.unread {
+  background: #f5f7ff;
+}
+
+/* ================= ICON ================= */
+
+.notificationIcon {
+  width: 34px;
+  height: 34px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #eef2ff;
+
+  color: #6366f1;
+}
+
+/* ================= CONTENT ================= */
+
+.notificationContent {
+  flex: 1;
+  min-width: 0;
+}
+
+.notificationContent strong {
+  display: block;
+
+  margin-bottom: 3px;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  color: #1f2937;
+}
+
+.notificationContent p {
+  margin: 0 0 4px;
+
+  font-size: 12px;
+  line-height: 1.4;
+
+  color: #6b7280;
+}
+
+.notificationContent span {
+  font-size: 10px;
+  color: #9ca3af;
+}
+
+/* ================= UNREAD DOT ================= */
+
+.unreadDot {
+  width: 7px;
+  height: 7px;
+
+  margin-top: 7px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #6366f1;
+}
+
+/* ================= EMPTY ================= */
+
+.emptyNotifications {
+  padding: 45px 20px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  color: #9ca3af;
+}
+
+.emptyNotifications svg {
+  margin-bottom: 10px;
+}
+
+.emptyNotifications p {
+  margin: 0 0 4px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  color: #4b5563;
+}
+
+.emptyNotifications span {
+  font-size: 12px;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+  .notificationPanel {
+    position: fixed;
+
+    top: 70px;
+    left: 12px;
+    right: 12px;
+
+    width: auto;
+  }
+}
+
+/* ================= PROFILE WRAPPER ================= */
+
+.profileWrapper {
+  position: relative;
+}
+
+/* ================= PROFILE PANEL ================= */
+
+.profilePanel {
+  position: absolute;
+
+  top: calc(100% + 12px);
+  right: 0;
+
+  width: 300px;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.12);
+
+  overflow: hidden;
+
+  z-index: 1000;
+}
+
+/* ================= PROFILE HEADER ================= */
+
+.profileHeader {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 18px;
+
+  border-bottom: 1px solid #eeeeee;
+}
+
+.profileAvatar {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #eef2ff;
+  color: #6366f1;
+
+  flex-shrink: 0;
+}
+
+.profileInfo {
+  min-width: 0;
+}
+
+.profileInfo h3 {
+  margin: 0 0 3px;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  color: #1f2937;
+}
+
+.profileInfo span {
+  font-size: 12px;
+
+  color: #6b7280;
+}
+
+/* ================= BALANCE ================= */
+
+.profileBalance {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 10px;
+
+  padding: 14px 16px;
+}
+
+.profileBalanceItem {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 10px;
+
+  border-radius: 10px;
+
+  background: #f8fafc;
+}
+
+.profileBalanceItem svg {
+  color: #6366f1;
+}
+
+.profileBalanceItem div {
+  display: flex;
+  flex-direction: column;
+}
+
+.profileBalanceItem span {
+  font-size: 10px;
+
+  color: #6b7280;
+}
+
+.profileBalanceItem strong {
+  margin-top: 2px;
+
+  font-size: 14px;
+
+  color: #1f2937;
+}
+
+/* ================= PROFILE STATS ================= */
+
+.profileStats {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  margin: 0 16px;
+
+  border: 1px solid #eeeeee;
+
+  border-radius: 10px;
+
+  overflow: hidden;
+}
+
+.profileStats div {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 12px 6px;
+
+  text-align: center;
+}
+
+.profileStats div + div {
+  border-left: 1px solid #eeeeee;
+}
+
+.profileStats svg {
+  margin-bottom: 5px;
+
+  color: #6366f1;
+}
+
+.profileStats strong {
+  font-size: 16px;
+
+  color: #1f2937;
+}
+
+.profileStats span {
+  margin-top: 2px;
+
+  font-size: 9px;
+
+  color: #6b7280;
+}
+
+/* ================= PROFILE MENU ================= */
+
+.profileMenu {
+  margin-top: 12px;
+
+  padding: 8px 10px;
+
+  border-top: 1px solid #eeeeee;
+}
+
+.profileMenu button {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 10px 8px;
+
+  border: none;
+
+  background: transparent;
+
+  border-radius: 8px;
+
+  color: #374151;
+
+  font-size: 13px;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.profileMenu button:hover {
+  background: #f5f7ff;
+
+  color: #6366f1;
+}
+
+.profileMenu button svg {
+  flex-shrink: 0;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+  .profilePanel {
+    position: fixed;
+
+    top: 70px;
+
+    left: 12px;
+    right: 12px;
+
+    width: auto;
+  }
+}

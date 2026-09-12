@@ -1,10 +1,9 @@
+
 import {
   Home,
   Gamepad2,
   Gift,
   Trophy,
-  User,
-  Settings,
   Coins,
   ArrowRight
 } from "lucide-react";
@@ -31,46 +30,29 @@ const menuItems = [
   {
     label: "Leaderboard",
     icon: Trophy,
-    path: "#"
-  },
-  {
-    label: "Profile",
-    icon: User,
-    path: "#"
-  },
-  {
-    label: "Settings",
-    icon: Settings,
-    path: "#"
+    path: "/leaderboard"
   }
 ];
 
 export default function Sidebar() {
   return (
     <aside className={styles.sidebar}>
+
+      {/* LOGO */}
+
       <div className={styles.logo}>
         <span className={styles.logoIcon}>ϟ</span>
+
         <span>
           VELOOP <b>GAMES</b>
         </span>
       </div>
 
+      {/* NAVIGATION */}
+
       <nav className={styles.nav}>
         {menuItems.map((item) => {
           const Icon = item.icon;
-
-          if (item.path === "#") {
-            return (
-              <button
-                key={item.label}
-                className={styles.navItem}
-                type="button"
-              >
-                <Icon size={20} />
-                <span>{item.label}</span>
-              </button>
-            );
-          }
 
           return (
             <NavLink
@@ -89,7 +71,10 @@ export default function Sidebar() {
         })}
       </nav>
 
+      {/* REWARD BOX */}
+
       <div className={styles.rewardBox}>
+
         <div className={styles.rewardGlow} />
 
         <div className={styles.rewardIcon}>
@@ -108,7 +93,9 @@ export default function Sidebar() {
           View Rewards
           <ArrowRight size={15} />
         </NavLink>
+
       </div>
+
     </aside>
   );
 }
